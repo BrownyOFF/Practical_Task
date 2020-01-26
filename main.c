@@ -10,35 +10,29 @@
 #define KEY_S 83
 #define KEY_BACKSPACE 8 
 
-struct student{
+struct teacher{
 	char suname[30];
 	char name[30];
 	char otchestv[30];
 	char sex[30];
-	char national[30];
-	char birth[30];
-	char number[30];
-	int zip;
-	char country[30];
 	char city[30];
 	char addres[30];
 	int house;
 	int flat;
-	char univers[30];
-	int year;
-	char group[30];
-	float avGrade;
-	char spec[30];
-}num;
+	char birth[30];
+	char kafedra[30];
+	char posada[30];
+	char step[30];
+	char osvita[30];
+	int staz;
+};
 
 int main()
 {
 	setvbuf(stdout, NULL, _IONBF, 0);
-	int am = 0, search, delete;
-	char task;
-	struct student num[20];
-	struct student tmp;
-	do
+	int am = 0, search, delete, task;
+	struct teacher *num;
+	num = (struct teacher*)malloc(10 * sizeof(struct teacher));
 	{
 		
 		printf("Structure:\n");
@@ -48,30 +42,32 @@ int main()
 		printf("3 - Search\n");
 		printf("4 - Delete record\n");
 		printf("5 - Sort by suname\n-->");
-		task = _getche();
+		scanf("%d", &task);
 		switch (task)
 		{
-			case KEY_A:
+			case 1:
 				printf("\n1");
 				break;
-			case KEY_O:
+			case 2:
 				printf("\n2");
 				break;
-			case KEY_F:
+			case 3:
 				printf("\n3");
 				break;
-			case KEY_D:
+			case 4:
 				printf("\n4");
 				break;
-			case KEY_S:
+			case 5:
 				printf("\n5");
 				break;
-			case KEY_BACKSPACE:
+			case 0:
+				free(num);
 				return 0;
 			default:
 				printf("\nWrong number\n");
 				break;
 		}
 	}while (task != 0);
+	free(num);
 	return 0;
 }
