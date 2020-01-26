@@ -11,19 +11,19 @@
 #define KEY_BACKSPACE 8 
 
 struct teacher{
-	char suname[30];
-	char name[30];
-	char otchestv[30];
-	char sex[30];
-	char city[30];
-	char addres[30];
+	char suname[15];
+	char name[15];
+	char otchestv[15];
+	char sex[15];
+	char city[15];
+	char addres[15];
 	int house;
 	int flat;
-	char birth[30];
-	char kafedra[30];
-	char posada[30];
-	char step[30];
-	char osvita[30];
+	char birth[15];
+	char kafedra[15];
+	char posada[15];
+	char step[15];
+	char osvita[15];
 	int staz;
 };
 
@@ -31,8 +31,9 @@ int main()
 {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	int am = 0, search, delete, task;
+	char name[] = "C:\\Users\\3brow\\Practise_Task\\teacher.txt";
 	struct teacher *num;
-	num = (struct teacher*)malloc(10 * sizeof(struct teacher));
+	num = (struct teacher*)malloc(sizeof(struct teacher));
 	{
 		
 		printf("Structure:\n");
@@ -46,7 +47,21 @@ int main()
 		switch (task)
 		{
 			case 1:
-				printf("\n1");
+
+				// Write
+
+				FILE *f;
+				f = fopen(name, "a");
+				if (f == NULL) 
+				{
+					printf("\nFile cannot be reach\n");
+					break;									 	// файл не удалось открыть
+				}
+				else 
+				{
+					num = write()
+					fwrite()				// Работа с файлом
+				}
 				break;
 			case 2:
 				printf("\n2");
