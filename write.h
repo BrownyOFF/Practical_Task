@@ -3,6 +3,7 @@
 #include <malloc.h>
 #include <string.h>
 #include <conio.h>
+#include <unistd.h>
 
 typedef struct teacher{
 	char suname[15];
@@ -21,6 +22,15 @@ typedef struct teacher{
 	int staz;
 }str;
 
-void write(str* num, int* am);
+void scan(str* num, int* am);
 void menu(void);
 void show_structure(str* num, int* am);
+void sort_by_surname(str* num, int* am);
+void write(str* num, int* am, FILE * f);
+void loading(void);
+void delete_structure(str* num, int* am);
+void sort_by_name(str* num, int* am);
+void sort_by_city(str* num, int* am);
+void search_by_number(str* num, int* number);
+void search_by_name(str* num, int* am);
+void search_by_staz(str* num, int* am);
