@@ -1,5 +1,5 @@
 # Practical_Task
-g++ write.c main.c -o main.exe
+g++ write.c main.c -o Program.exe
 26.01.2020 - Created basic files
 27.01.2020 - Functional menu added
 30.01.2020 - Main functions are written and ready to use
