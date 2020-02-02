@@ -30,16 +30,15 @@ void menu(void)
 		printf("1 - New record\n");
 		printf("2 - Show structure\n");
 		printf("3 - Search\n");
+		printf("\t31 - Search by number\n");
+		printf("\t32 - Search by name\n");
+		printf("\t33 - Search by staz\n");
 		printf("4 - Delete record\n");
 		printf("5 - Sort:\n");
 		printf("\t51 - Sort by name\n");
 		printf("\t52 - Sort by surname\n");
 		printf("\t53 - Sort by city\n");
 		printf("6 - Edit record\n");
-		printf("7 - Search:\n");
-		printf("\t71 - Search by number\n");
-		printf("\t72 - Search by name\n");
-		printf("\t73 - Search by staz\n");
 		for (int k = 0; k < 52; k++)
 		{
 			printf("-");
@@ -56,6 +55,7 @@ void show_structure(str* num, int* am)
 		{
 			printf("-");
 		}
+		printf("\n\t\tTeacher %d", i + 1);
  		printf("\nSuname: %s", num[i].suname);
 		printf("\nName: %s", num[i].name);
 		printf("\nOtchevts: %s", num[i].otchestv);
@@ -102,27 +102,21 @@ void write(str* num, int* am, FILE * f)
 
 void loading(void)
 {
-	system("clear");
 	system("cls");
 	printf("Loading");
 	sleep(1);
-	system("clear");
 	system("cls");
 	printf("Loading.");
 	sleep(1);
-	system("clear");
 	system("cls");
 	printf("Loading..");
 	sleep(1);
-	system("clear");
 	system("cls");
 	printf("Loading...");
 	sleep(1);
-	system("clear");
 	system("cls");
 	printf("Done!");
 	sleep(1);
-	system("clear");
 	system("cls");
 }
 
@@ -202,7 +196,7 @@ void search_by_number(str* num, int* number)
 
 void search_by_name(str* num, int* am)
 {
-	system("clear");
+	system("cls");
 	char NameSearch[15];
 	printf("\nWrite name:");
 	scanf("%s", &NameSearch);
@@ -218,7 +212,7 @@ void search_by_name(str* num, int* am)
 
 void search_by_staz(str* num, int* am)
 {
-	system("clear");
+	system("cls");
 	int StazSearch;
 	printf("\nWrite staz:");
 	scanf("%d", &StazSearch);

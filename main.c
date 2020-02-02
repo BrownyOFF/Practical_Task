@@ -10,6 +10,7 @@ int main()
 {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	char name[] = "teacher.txt";
+	int task, edit_num, number;
 
 	FILE* f;
 	f = fopen(name, "r");
@@ -18,8 +19,7 @@ int main()
 		printf("\nError with open file");
 		return 1;
 	}
-	int task, edit_num, number;
-
+	
 	fseek(f, 0, SEEK_END);
 	int size = ftell(f);
 	rewind(f);
@@ -35,14 +35,15 @@ int main()
 	fclose(f);
 	loading();
 	do {
-		system("clear");
 		system("cls");
 		menu();
 		scanf("%d", &task);
 		switch (task)
 		{
+			case 0:
+				break;
 			case 1:
-				system("clear");
+				system("cls");
 				scan(num, &am);
 				am++;
 				f = fopen(name, "a");
@@ -54,9 +55,6 @@ int main()
 				loading();
 				show_structure(num, &am);
 				system("pause");
-				break;
-			case 3:
-				printf("\n3");
 				break;
 			case 4:
 				delete_structure(num, &am);
@@ -96,32 +94,30 @@ int main()
 				loading();
 				fclose(f);
 				break;
-			case 71:
+			case 31:
 				printf("\nWrite number of record(exist = %d):", am);
 				scanf("%d", &number);
 				number--;
-				system("clear");
+				system("cls");
 				loading();
 				search_by_number(num, &number);
 				system("pause");
 				break;
-			case 72:
+			case 32:
 				search_by_name(num, &am);
 				system("pause");
 				break;
-			case 73:
+			case 33:
 				search_by_staz(num, &am);
 				system("pause");
 				break;
-			case 0:
-				printf("\nSee ya!");
-				sleep(1);
-				return 0;
 			default:
 				printf("\nWrong number\n");
 				sleep(1);
 				break;
 		}
 	}while (task != 0);
+	printf("\nSee ya!");
+	sleep(1);
 	return 0;
 }

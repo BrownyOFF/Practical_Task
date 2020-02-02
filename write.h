@@ -6,19 +6,19 @@
 #include <unistd.h>
 
 typedef struct teacher{
-	char suname[15];
-	char name[15];
-	char otchestv[15];
-	char sex[15];
-	char city[15];
-	char addres[15];
+	char suname[20];
+	char name[20];
+	char otchestv[20];
+	char sex[20];
+	char city[20];
+	char addres[20];
 	int house;
 	int flat;
-	char birth[15];
-	char kafedra[15];
-	char posada[15];
-	char step[15];
-	char osvita[15];
+	char birth[20];
+	char kafedra[20];
+	char posada[20];
+	char step[20];
+	char osvita[20];
 	int staz;
 }str;
 
